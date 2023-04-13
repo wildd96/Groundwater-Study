@@ -59,7 +59,7 @@ if choice == 'Slope':
     
     st.title("Location hue by slope")
     st.write("...")
-    with open("map.html", "r") as f:
+    with open("PyPrograms/map.html", "r") as f:
         map_html = f.read()
         st.components.v1.html(map_html, width=700, height=500)
 
@@ -72,7 +72,7 @@ if choice == 'Flag':
 
     st.title("Location hue by flag")
     st.write("...")
-    with open("map2.html", "r") as f:
+    with open("PyPrograms/map2.html", "r") as f:
         map_html = f.read()
         st.components.v1.html(map_html, width=700, height=500)
 
