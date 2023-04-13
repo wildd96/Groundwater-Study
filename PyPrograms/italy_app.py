@@ -28,15 +28,15 @@ def get_grace_data(latitude, longitude):
 def collect_df():
     complete_df = pd.DataFrame()
 
-    for file in os.listdir('C:\\Users\\Andrew\\Desktop\\gw_study\\girotto_lab\\processed_data\\all_combined'):
-        df = pd.read_excel('C:\\Users\\Andrew\\Desktop\\gw_study\\girotto_lab\\processed_data\\all_combined\\' + file)
+    for file in os.listdir('all_combined'):
+        df = pd.read_excel('all_combined\\' + file)
         complete_df = complete_df.append(df)
     return complete_df
 
 @st.experimental_memo
 def collect_flagged():
     flagged_table = pd.DataFrame()
-    flagged_filepath = "C:\\Users\\Andrew\\Desktop\\gw_study\\girotto_lab\\processed_data\\all_matrix\\flagged-tables"
+    flagged_filepath = "all_matrix\\flagged-tables"
 
     for files in os.listdir(flagged_filepath):
         df = pd.read_excel(flagged_filepath + "\\" + files)
