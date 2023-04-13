@@ -29,17 +29,17 @@ def collect_df():
     complete_df = pd.DataFrame()
 
     for file in os.listdir('all_combined'):
-        df = pd.read_excel('all_combined\\' + file)
+        df = pd.read_excel('all_combined/' + file)
         complete_df = complete_df.append(df)
     return complete_df
 
 @st.experimental_memo
 def collect_flagged():
     flagged_table = pd.DataFrame()
-    flagged_filepath = "all_matrix\\flagged-tables"
+    flagged_filepath = "all_matrix/flagged-tables"
 
     for files in os.listdir(flagged_filepath):
-        df = pd.read_excel(flagged_filepath + "\\" + files)
+        df = pd.read_excel(flagged_filepath + "/" + files)
         df = df.iloc[[0], 1:].T
         flagged_table = flagged_table.append(df)
     flagged_table = flagged_table.reset_index()
