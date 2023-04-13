@@ -24,7 +24,7 @@ def get_grace_data(latitude, longitude):
     
     return grace_df
 
-@st.cache_data    
+@st.experimental_memo    
 def collect_df():
     complete_df = pd.DataFrame()
 
@@ -33,7 +33,7 @@ def collect_df():
         complete_df = complete_df.append(df)
     return complete_df
 
-@st.cache_data
+@st.experimental_memo
 def collect_flagged():
     flagged_table = pd.DataFrame()
     flagged_filepath = "C:\\Users\\Andrew\\Desktop\\gw_study\\girotto_lab\\processed_data\\all_matrix\\flagged-tables"
